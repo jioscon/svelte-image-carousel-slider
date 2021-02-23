@@ -1,6 +1,8 @@
 # Svelte Image Carousel Slider
 
-스벨트 이미지 스라이드 쇼
+This is an image carousel created by the Svelte front-end framework.
+
+스벨트 이미지 슬라이더
 
 ## DEMO
 
