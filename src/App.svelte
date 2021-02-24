@@ -30,18 +30,18 @@
   };
 
 	let interval = setInterval(next, 2000);
-	const playSlider = () => {
+	const autoPlay = () => {
 		interval = setInterval(next, 2000)
 	}
 
-	const stopSlider = () => {
+	const stopPlay = () => {
 		clearInterval(interval)
 	}
 </script>
 
 <main>
   <h1>Svelte Image Carousel Slider</h1>
-  <div on:mouseover={stopSlider} on:mouseleave={playSlider} class="container">
+  <div on:mouseover={stopPlay} on:mouseleave={autoPlay} class="container">
     <div class="slider" style="left: -{positionLeft}%;">
       {#each images as img}
         <img src={img} alt="" />

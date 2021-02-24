@@ -372,7 +372,7 @@ var app = (function () {
     			if (img.src !== (img_src_value = /*img*/ ctx[15])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
     			attr_dev(img, "class", "svelte-11851rg");
-    			add_location(img, file, 46, 8, 955);
+    			add_location(img, file, 46, 8, 947);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, img, anchor);
@@ -409,7 +409,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			attr_dev(button, "class", button_class_value = "" + (null_to_empty(/*currId*/ ctx[0] === /*i*/ ctx[14] ? "active" : "") + " svelte-11851rg"));
-    			add_location(button, file, 55, 8, 1222);
+    			add_location(button, file, 55, 8, 1214);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -511,27 +511,27 @@ var app = (function () {
     			t8 = text("Images from pixabay : ");
     			a = element("a");
     			a.textContent = "https://pixabay.com/";
-    			add_location(h1, file, 42, 2, 745);
+    			add_location(h1, file, 42, 2, 741);
     			attr_dev(div0, "class", "slider svelte-11851rg");
     			set_style(div0, "left", "-" + /*positionLeft*/ ctx[1] + "%");
-    			add_location(div0, file, 44, 4, 866);
+    			add_location(div0, file, 44, 4, 858);
     			attr_dev(button0, "class", "prev svelte-11851rg");
-    			add_location(button0, file, 50, 6, 1035);
+    			add_location(button0, file, 50, 6, 1027);
     			attr_dev(button1, "class", "next svelte-11851rg");
-    			add_location(button1, file, 51, 6, 1092);
+    			add_location(button1, file, 51, 6, 1084);
     			attr_dev(div1, "class", "arrow svelte-11851rg");
-    			add_location(div1, file, 49, 4, 1009);
+    			add_location(div1, file, 49, 4, 1001);
     			attr_dev(div2, "class", "papagination svelte-11851rg");
-    			add_location(div2, file, 53, 4, 1158);
+    			add_location(div2, file, 53, 4, 1150);
     			attr_dev(div3, "class", "container svelte-11851rg");
-    			add_location(div3, file, 43, 2, 785);
+    			add_location(div3, file, 43, 2, 781);
     			attr_dev(a, "href", "https://pixabay.com/");
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noopener");
-    			add_location(a, file, 63, 26, 1393);
-    			add_location(p, file, 62, 2, 1363);
+    			add_location(a, file, 63, 26, 1385);
+    			add_location(p, file, 62, 2, 1355);
     			attr_dev(main, "class", "svelte-11851rg");
-    			add_location(main, file, 41, 0, 736);
+    			add_location(main, file, 41, 0, 732);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -568,8 +568,8 @@ var app = (function () {
     				dispose = [
     					listen_dev(button0, "click", /*prev*/ ctx[4], false, false, false),
     					listen_dev(button1, "click", /*next*/ ctx[3], false, false, false),
-    					listen_dev(div3, "mouseover", /*stopSlider*/ ctx[7], false, false, false),
-    					listen_dev(div3, "mouseleave", /*playSlider*/ ctx[6], false, false, false)
+    					listen_dev(div3, "mouseover", /*stopPlay*/ ctx[7], false, false, false),
+    					listen_dev(div3, "mouseleave", /*autoPlay*/ ctx[6], false, false, false)
     				];
 
     				mounted = true;
@@ -687,11 +687,11 @@ var app = (function () {
 
     	let interval = setInterval(next, 2000);
 
-    	const playSlider = () => {
+    	const autoPlay = () => {
     		interval = setInterval(next, 2000);
     	};
 
-    	const stopSlider = () => {
+    	const stopPlay = () => {
     		clearInterval(interval);
     	};
 
@@ -713,8 +713,8 @@ var app = (function () {
     		prev,
     		getIndex,
     		interval,
-    		playSlider,
-    		stopSlider
+    		autoPlay,
+    		stopPlay
     	});
 
     	$$self.$inject_state = $$props => {
@@ -734,8 +734,8 @@ var app = (function () {
     		next,
     		prev,
     		getIndex,
-    		playSlider,
-    		stopSlider,
+    		autoPlay,
+    		stopPlay,
     		click_handler
     	];
     }
